@@ -38,14 +38,16 @@ def test_create_user(client):
 def test_read_users(client):
     response = client.get('/users/')
 
-    assert response.status_code == HTTPStatus.ok
-    assert response.json() == {'users': [
-        {
-            'username': 'testusername',
-            'email': 'test@test.om',
-            'id': 1,
-        }
-    ]}
+    assert response.status_code == HTTPStatus.OK
+    assert response.json() == {
+        'users': [
+            {
+                'username': 'testeusername',
+                'email': 'victorsoaresferreira09@gmail.com',
+                'id': 1,
+            }
+        ]
+    }
 
 
 def test_update_user(client):
