@@ -1,10 +1,11 @@
 from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 
 from fast_zero.settings import Settings
 
-engine =
+engine = create_engine(Settings().DATABASE_URL)
 
 
-def create_engine():
+def get_session():  # pragma: no cover
     with Session(engine) as session:
-        return session
+        yield session
