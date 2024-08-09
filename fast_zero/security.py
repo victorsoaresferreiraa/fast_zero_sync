@@ -9,6 +9,7 @@ ALGORITHM = 'HS256'
 ACESS_TOKEN_EXPIRE_MINUTES = 30
 pwd_context = PasswordHash.recommended()
 
+
 def create_acess_token(data: dict):
     to_encode = data.copy()
     expire = datetime.now(tz=ZoneInfo('UTF')) + timedelta(
