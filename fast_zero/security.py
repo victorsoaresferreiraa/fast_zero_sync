@@ -33,10 +33,10 @@ def get_current_user(
 
     try:
         payload = decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        username = str = payload.get('sub')
+        username: str = payload.get('sub')
 
         if not username:
-            raise credentials_exception
+            raise credential_exception
         token_data = TokenData(username=username)
 
     except DecodeError:
